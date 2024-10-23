@@ -1,0 +1,505 @@
+﻿<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>フードラバー</title>
+
+    <!-- **** Bootstrap CSS *** -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM"
+      crossorigin="anonymous"
+    />
+
+    <!-- **** Fontawesoome CSS *** -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
+    />
+
+    <!-- **** Custom CSS *** -->
+    <link rel="stylesheet" href="assets/css/style.css" />
+
+    <link rel="icon" href="assets/images/favicon.jpg" />
+  </head>
+
+  <body>
+    <!-- **** Vertically Centered Modal **** -->
+    <div style="cursor: pointer;" class="modal fade" id="welcomeModal" tabindex="-1" aria-hidden="true" data-bs-backdrop="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content text-center position-relative">
+                <button type="button" class="btn-close position-absolute top-0 end-0 m-2" data-bs-dismiss="modal" aria-label="Close"></button>
+                <div class="modal-body" data-bs-dismiss="modal">
+                    <img src="assets/images/logo.png" alt="フードラバー ロゴ" class="logo mb-3" style="max-width: 100px;">
+                    <p class="lead">「フードラバー」でおいしい料理の旅を始めましょう！</p>
+                    <p>ポップアップのどこかをクリックすると、初回注文が50％オフになる。</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- **** Header Section **** -->
+
+    <header>
+        <nav class="navbar navbar-expand-lg navigation-wrap">
+            <div class="container">
+                <a class="navbar-brand" href="#">
+                    <img src="assets/images/logo.png" alt="" class="logo">
+                </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                    aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav ms-auto">
+                        <li class="nav-item">
+                            <a class="nav-link" href="#home">ホーム</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#about">私たちについて</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#explore-food">メニューを見る</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#testinomial">お客様の声</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#faq">よくある質問</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#contact">お問い合わせ</a>
+                        </li>
+                        <li>
+                            <button class="main-btn">8823945328</button>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- **** Section-1 Top-Banner ****  -->
+
+    <section id="home">
+        <div class="container-fluid px-0 top-banner">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-5 col-md-6">
+                        <h1>家族から家族へ、<br>おいしく健康的なレシピ</h1>
+                        <p class="drop-in-2">フードラバーとして、私は予算内でおいしい料理を作ることができると確信しています。缶詰やインスタント麺ばかりの生活ではなく、一緒に予算内でできるおいしいレシピを楽しみましょう。</p>
+                        <div class="mt-4">
+                            <button class="main-btn">今すぐ注文 <img src="assets/images/next.png" alt=""></button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- **** Section-2 Counter Section **** -->
+
+    <section id="counter">
+        <section class="counter-section">
+            <div class="container">
+                <div class="row text-center">
+                    <div class="col-md-3 mb-lg-0 mb-md-0 mb-5">
+                        <h2>
+                            <span id="count1"></span> +
+                        </h2>
+                        <p>お客様</p>
+                    </div>
+                    <div class="col-md-3 mb-lg-0 mb-md-0 mb-5">
+                        <h2>
+                            <span id="count2"></span> +
+                        </h2>
+                        <p>レビュー</p>
+                    </div>
+                    <div class="col-md-3 mb-lg-0 mb-md-0 mb-5">
+                        <h2>
+                            <span id="count3"></span> +
+                        </h2>
+                        <p>評価</p>
+                    </div>
+                    <div class="col-md-3 mb-lg-0 mb-md-0 mb-5">
+                        <h2>
+                            <span id="count4"></span> +
+                        </h2>
+                        <p>注文数</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </section>
+
+    <!-- **** Section-3 About Section ****  -->
+
+    <section id="about">
+        <div class="about-section wrapper">
+            <div class="container">
+                <div class="row align-items-center">
+                    <div class="col-lg-7 col-md-12 mb-lg-0 mb-5">
+                        <div class="card border-0">
+                            <img src="assets/images/about.jpg" alt="">
+                        </div>
+                    </div>
+                    <div class="col-lg-5 col-md-12 text-sec">
+                        <h2>私たちは最高の食材で<span>本物の料理</span>を作ることに誇りを持っています。</h2>
+                        <p class="drop-in-2"> 実際の経験に加えて、シンプルながら効果的なビジネスプランが必要です。それにはレストランのコンセプト、ターゲット市場と場所、メニューと価格設定、将来の収益と支出の予測、そしてスタッフの採用、トレーニング、保持方針を定義します。
+                            <br><br>
+                            賢く投資することは、コストを抑えつつ品質を損なわないために重要です。また、長期的で高い使用頻度に耐えられる高品質の機器への投資も不可欠です。
+                        </p>
+                        <button class="main-btn mt-4">もっと見る</button>
+                    </div>
+                </div>
+            </div>
+    </section>
+
+    <!-- **** Section-4 Work Section ****  -->
+
+    <section id="work">
+      <section class="work-section">
+        <div class="container">
+          <div class="row text-center">
+            <h2>サービスの<span>流れ</span></h2>
+            <div class="col-md-3 mb-lg-0 mb-md-0 mb-5">
+              <img src="assets/images/img-4.jpg" alt="" />
+              <p class="drop-in-2">お気に入りの料理を選ぶ</p>
+            </div>
+            <div class="col-md-3 mb-lg-0 mb-md-0 mb-5">
+              <img src="assets/images/delivery.jpg" alt="" />
+              <p class="drop-in-2">無料で迅速な配達</p>
+            </div>
+            <div class="col-md-3 mb-lg-0 mb-md-0 mb-5">
+              <img src="assets/images/payment.jpg" alt="" />
+              <p class="drop-in-2">簡単な支払い方法</p>
+            </div>
+            <div class="col-md-3 mb-lg-0 mb-md-0 mb-5">
+              <img src="assets/images/enjoy-food.png" alt="" />
+              <p class="drop-in-2">そして、料理を楽しむ</p>
+            </div>
+          </div>
+        </div>
+      </section>
+    </section>
+
+    <!-- **** Section-5 Story Section  -->
+
+    <section id="story">
+      <div class="story-section">
+        <div class="container">
+          <div class="row">
+            <div class="col-sm-12">
+              <div class="text-content">
+                <h2>
+                  お腹がいっぱいになれば、金持ちでも貧乏でも関係ありません。
+                </h2>
+                <p class="drop-in-2">
+                  多くの成功したレストラン経営者は、他のレストランで働くことが自分自身の店舗を所有し、運営するための最高の準備だったと考えています。
+                </p>
+                <button class="main-btn mt-3">もっと読む</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- **** Section-6 Explore Food **** -->
+
+    <section id="explore-food">
+      <div class="explore-food wrapper">
+        <div class="container-fluid">
+          <div class="row">
+            <div class="col-sm-12">
+              <div class="text-content text-center">
+                <h2>私たちの<span>料理を探索</span></h2>
+                <p class="drop-in-2">
+                  食べ物は旅行の理由にもなります！文化を味わう最良の方法は、地元の味を試すことです。それが高級レストランであろうと、地元の小さな食堂であろうと、ストリートフードの屋台であろうと。
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Food Items Section Translated Similarly -->
+        </div>
+      </div>
+    </section>
+
+    <!-- **** Section-7 Testinomial **** -->
+
+    <section id="testinomial">
+      <div class="wrapper testimonial-section">
+        <div class="container text-center">
+          <div class="text-center pb-4">
+            <h2 class="text-white">お客様の声</h2>
+          </div>
+          <div class="row">
+            <div class="col-sm-12 col-lg-10 offset-lg-1">
+              <div
+                id="carouselExampleControls"
+                class="carousel slide"
+                data-ride="carousel"
+              >
+                <div class="carousel-indicators">
+                  <button
+                    type="button"
+                    data-bs-target="#carouselExampleControls"
+                    data-bs-slide-to="0"
+                    class="active"
+                    aria-current="true"
+                    aria-label="スライド1"
+                  ></button>
+                  <button
+                    type="button"
+                    data-bs-target="#carouselExampleControls"
+                    data-bs-slide-to="1"
+                    aria-label="スライド2"
+                  ></button>
+                  <button
+                    type="button"
+                    data-bs-target="#carouselExampleControls"
+                    data-bs-slide-to="2"
+                    aria-label="スライド3"
+                  ></button>
+                  <button
+                    type="button"
+                    data-bs-target="#carouselExampleControls"
+                    data-bs-slide-to="3"
+                    aria-label="スライド4"
+                  ></button>
+                  <button
+                    type="button"
+                    data-bs-target="#carouselExampleControls"
+                    data-bs-slide-to="4"
+                    aria-label="スライド5"
+                  ></button>
+                </div>
+
+                <div class="carousel-inner">
+                  <div class="carousel-item active">
+                    <div class="carousel-caption">
+                      <img src="assets/images/review-1.jpg" />
+                      <p>
+                        “遠く、言葉の山の向こう、ボカリアとコンソナンティアの国々から遠く離れた場所に、盲目のテキストたちが住んでいます。”
+                      </p>
+                      <h5>ジョナサン・ドウ</h5>
+                    </div>
+                  </div>
+
+                  <!-- Additional Reviews Translated Similarly -->
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- **** Section-8 FAQ Section **** -->
+
+    <section id="faq">
+      <div class="faq wrapper">
+        <div class="container">
+          <div class="row">
+            <div class="col-sm-12">
+              <div class="text-center pb-4">
+                <h2>よくある<span>質問</span></h2>
+              </div>
+            </div>
+          </div>
+
+          <div class="row pt-5">
+            <div class="col-sm-6 mb-4">
+              <h4><span>~</span>通常の予約はどうすればいいですか？</h4>
+              <p class="drop-in-2">
+                簡単です -
+                お好きなレストランを選んで、希望の日付と時間を選択してください。メールアドレスと電話番号があれば、"予約"ボタンを押した瞬間に確認が完了します。
+              </p>
+            </div>
+            <div class="col-sm-6 mb-4">
+              <h4><span>~</span>スペシャルメニューの予約方法は？</h4>
+              <p class="drop-in-2">
+                とても簡単です -
+                お好きなスペシャルメニューを選び、日付と時間を指定してください。メールアドレスと電話番号があれば、"予約"ボタンを押した瞬間に予約が完了します。
+              </p>
+            </div>
+
+            <!-- Additional FAQs Translated Similarly -->
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- **** Section-9 Book Food **** -->
+
+    <section id="book-food">
+      <div class="book-food">
+        <div class="container book-food-text">
+          <div class="row text-center">
+            <div class="col-lg-9 col-md-12">
+              <h2>情熱を持ったパン職人が毎日焼き上げています。</h2>
+            </div>
+            <div class="col-lg-3 col-md-12 mt-lg-0 mt-4">
+              <button class="main-btn">もっと見る</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- **** Section-10 Newsletter **** -->
+
+    <section id="newsletter">
+      <div class="newsletter wrapper">
+        <div class="container">
+          <div class="row">
+            <div class="col-sm-12">
+              <div class="text-content text-center pb-4">
+                <h2>
+                  急いで！<span>ニュースレターに登録</span>して25％オフをゲット！
+                </h2>
+                <p class="drop-in-2">
+                  今月限定の特別オファー。クレジットカード不要です。
+                </p>
+              </div>
+              <form action="#" class="newsletter">
+                <div class="row">
+                  <div class="col-md-8 col-12">
+                    <input
+                      type="email"
+                      class="form-control"
+                      placeholder="メールアドレスを入力してください"
+                      name="email"
+                    />
+                  </div>
+                  <div class="col-md-4 col-12">
+                    <button class="main-btn" type="submit">登録する</button>
+                  </div>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- **** Section-11 Contact Section **** -->
+
+    <section id="contact">
+      <div class="contact-section">
+        <div class="container">
+          <div class="row">
+            <div class="col-sm-12">
+              <div class="text-center pb-4">
+                <h2>お問い合わせ</h2>
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-sm-6 mb-4">
+              <img src="assets/images/contact.jpg" alt="" class="img-fluid" />
+            </div>
+            <div class="col-sm-6 mb-4">
+              <form action="#">
+                <div class="form-group">
+                  <label for="name">名前</label>
+                  <input
+                    type="text"
+                    name="name"
+                    id="name"
+                    class="form-control"
+                    placeholder="お名前を入力してください"
+                  />
+                </div>
+                <div class="form-group">
+                  <label for="email">メールアドレス</label>
+                  <input
+                    type="email"
+                    name="email"
+                    id="email"
+                    class="form-control"
+                    placeholder="メールアドレスを入力してください"
+                  />
+                </div>
+                <div class="form-group">
+                  <label for="subject">件名</label>
+                  <input
+                    type="text"
+                    name="subject"
+                    id="subject"
+                    class="form-control"
+                    placeholder="件名を入力してください"
+                  />
+                </div>
+                <div class="form-group">
+                  <label for="message">メッセージ</label><br />
+                  <textarea
+                    name="message"
+                    id=""
+                    cols="20"
+                    rows="2"
+                    placeholder="メッセージを入力してください"
+                  ></textarea>
+                </div>
+                <button type="submit" class="main-btn">送信する</button>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ****  Section-12 Footer Section **** -->
+
+    <section id="footer">
+      <div class="footer py-5">
+        <div class="container">
+          <div class="row">
+            <div class="col-md-12 text-center">
+              <a href="#" class="footer-link">登録</a>
+              <a href="#" class="footer-link">フォーラム</a>
+              <a href="#" class="footer-link">アフィリエイト</a>
+              <a href="#" class="footer-link">FAQ</a>
+              <div class="footer-social pt-4 text-center">
+                <a href="#"><img src="assets/images/facebook.png" alt="" /></a>
+                <a href="#"><img src="assets/images/twitter.png" alt="" /></a>
+                <a href="#"><img src="assets/images/youtube.png" alt="" /></a>
+                <a href="#"><img src="assets/images/linked.png" alt="" /></a>
+                <a href="#"><img src="assets/images/instagram.png" alt="" /></a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- **** Javascript **** -->
+
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+      crossorigin="anonymous"
+    ></script>
+
+    <script>
+        // Show the modal when the page loads
+        window.addEventListener('load', function () {
+            var myModal = new bootstrap.Modal(document.getElementById('welcomeModal'));
+            myModal.show();
+        });
+
+        // Make the modal close when clicked anywhere on the page
+        document.addEventListener('click', function (event) {
+            var modal = document.getElementById('welcomeModal');
+            if (modal && !modal.contains(event.target)) {
+                var myModal = bootstrap.Modal.getInstance(modal);
+                myModal.hide();
+            }
+        });
+    </script>
+
+    <script src="assets/js/main.js"></script>
+  </body>
+</html>
