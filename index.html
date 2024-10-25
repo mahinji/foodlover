@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="ja">
   <head>
     <meta charset="UTF-8" />
@@ -37,6 +37,20 @@
   </head>
 
   <body>
+    <!-- **** Vertically Centered Modal **** -->
+    <div style="cursor: pointer;" class="modal fade" id="welcomeModal" tabindex="-1" aria-hidden="true" data-bs-backdrop="true">
+      <div class="modal-dialog modal-dialog-centered">
+          <div class="modal-content text-center position-relative">
+              <button type="button" class="btn-close position-absolute top-0 end-0 m-2" data-bs-dismiss="modal" aria-label="Close"></button>
+              <div class="modal-body" data-bs-dismiss="modal">
+                  <img src="assets/images/logo.png" alt="フードラバー ロゴ" class="logo mb-3" style="max-width: 100px;">
+                  <p class="lead">「フードラバー」でおいしい料理の旅を始めましょう！</p>
+                  <p>ポップアップのどこかをクリックすると、初回注文が50％オフになる。</p>
+              </div>
+          </div>
+      </div>
+  </div>
+  
     <!-- **** Header Section **** -->
 
     <header>
@@ -482,5 +496,20 @@
     ></script>
 
     <script src="assets/js/main.js"></script>
+
+    <script>
+      
+      var myModal = new bootstrap.Modal(document.getElementById('welcomeModal'));
+      myModal.show();
+
+      // Make the modal close when clicked anywhere on the page
+      document.addEventListener('click', function (event) {
+          var modal = document.getElementById('welcomeModal');
+          if (modal && !modal.contains(event.target)) {
+              var myModal = bootstrap.Modal.getInstance(modal);
+              myModal.hide();
+          }
+      });
+  </script>
   </body>
 </html>
